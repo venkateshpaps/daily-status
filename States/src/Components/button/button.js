@@ -1,12 +1,13 @@
-
 import React, { Component } from 'react';
-
-const Button = (props) => {
-    return (
-        <div>
-            <button onClick={props.SortingName}>Sort by Name</button>
-            <button onClick={props.SortingAge}>Sort by Age</button>
-            <button onClick={props.toggle}>Toggle</button>
-        </div>);
+import './Button.css'
+class Button extends Component {
+    render() {
+        return (
+            <div>
+                <button  className="btnStyle" onClick={this.props.SortingName}>Sort by Name</button>
+                <button  className="btnStyle" onClick={this.props.SortingAge}>Sort by Age</button>
+                <button  className="btnStyle" onClick={this.props.toggle}>Toggle</button>
+            </div>);
+    }
 }
-export default  Button;
+export default Button;
