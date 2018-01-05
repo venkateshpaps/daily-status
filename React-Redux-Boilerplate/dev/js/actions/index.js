@@ -5,16 +5,28 @@ export const selectUser = (user) => {
         payload: user
     }
 };
-export const modify = (user) => {
+export const addUser=(user)=>{
+    console.log(user);
+    return{
+        type:'ADD',
+        payload:user
+    }
+};
+export const modifyUser = (user) => {
     return {
-        type: 'modify',
+        type: 'MODIFY',
         payload: user
     }
 }
+export const showDetails = (value) => {
+    return {
+        type: 'SHOW_DETAILS',
+        payload: {showContent:value}
+    }
+};
 export const deleteUser = (user) => {
     return {
-        type: 'delete',
+        type: 'DELETE',
         payload: user
     }
 }
-

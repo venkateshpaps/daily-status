@@ -2,7 +2,7 @@
  * The users reducer will always return an array of users no matter what
  * You need to return something, so if there are no users then just return an empty array
  * */
-const data = [
+const userData = [
     {
         id: 116595,
         first: "Venkatesh",
@@ -29,17 +29,18 @@ const data = [
     }
 ];
 
-export default function (state = data, action) {
+export default function (state = userData, action) {
     switch (action.type) {
-        case 'modify':
+        case 'MODIFY':
             return state.map((n) => {
                 if (n.id == action.payload.id) {
                     return action.payload;
                 }
                 return n;
             });
-
-        case "delete":
+        case "ADD":
+            return [...state, action.payload];  
+        case 'DELETE':
             return state.filter(item => { return item.id != action.payload.id })
             console.log(del);
         default:

@@ -1,50 +1,58 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser,deleteUser } from '../actions/index'
+import { selectUser, showDetails,deleteUser } from '../actions/index'
 
 
 class UserList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            uservalue: {},
+            newUser: {}
         };
     }
-    selected(e) {
-        this.state.uservalue = e;
-        this.setState({
-            uservalue: this.state.uservalue
-        });
-        console.log(e.first);
-        console.log(this.state.uservalue);
+    userSelect(user) {
+        this.state.newUser = user;
+        this.setState({ newUser: this.state.newUser });
     }
-
+    editUser(newUser) {
+        this.props.showDetails(2);
+        this.props.selectUser(newUser);
+    }
+    addUser() {
+        this.props.showDetails(1);
+    }
+    deleteUser(deleteUser)
+    {
+        this.props.deleteUser(deleteUser);
+    }
+    viewUser(editUser)
+    {
+        this.props.selectUser(editUser);
+        this.props.showDetails(3);  
+    }
     renderList() {
         return this.props.users.map((user) => {
             return (
-                <div>
-                    <input type="radio" onClick={this.selected.bind(this,user)} />
-                    <li
-                        key={user.id}
-
-                    >
-                        {user.first} {user.last} , Age : {user.age}
-                    </li>
+                <div key={user.id}>
+                    <p><input value={user.id} type="radio" onClick={this.userSelect.bind(this, user)} ></input>
+                    Name: {user.first}{user.last}, Age:{user.age}, Description:{user.description} </p>
                 </div>
             );
         });
     }
+
     render() {
         return (
-            <ul>
-                {this.renderList()}
-                <button>Add</button>
-                <button>Edit</button>
-                <button onClick={() => this.props.deleteUser(this.state.uservalue)}>Delete</button>
-                <button onClick={() => this.props.selectUser(this.state.uservalue)} >View</button>
-
-            </ul>
+            <div>
+                <ul>
+                    {this.renderList()}
+                </ul>
+                <button onClick={this.addUser.bind(this)}> add  </button>
+                <button onClick={this.editUser.bind(this, this.state.newUser)}> edit </button>
+                <button onClick={this.viewUser.bind(this, this.state.newUser)}> view </button>
+                <button onClick={this.deleteUser.bind(this, this.state.newUser)}> delete </button>
+            </div>
         );
     }
 
@@ -58,12 +66,8 @@ function mapStateToProps(state) {
     };
 }
 
-// Get actions and pass them as props to to UserList
-//      > now UserList has this.props.selectUser
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({ selectUser: selectUser,deleteUser:deleteUser }, dispatch);
+    return bindActionCreators({ selectUser: selectUser, showDetails: showDetails,deleteUser:deleteUser }, dispatch);
 }
 
-// We don't want to return the plain UserList (component) anymore, we want to return the smart Container
-//      > UserList is now aware of state and actions
 export default connect(mapStateToProps, matchDispatchToProps)(UserList);

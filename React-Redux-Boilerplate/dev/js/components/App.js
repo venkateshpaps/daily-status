@@ -1,14 +1,17 @@
 import React from 'react';
 import UserList from '../containers/user-list';
-import UserDetails from '../containers/user-detail';
+import EditUser from '../containers/user-edit';
+import AddUser from '../containers/user-add';
+import ViewUser from '../containers/user-view';
+
 
 const App = () => (
     <div>
         <h2>User List</h2>
         <UserList />
-        <hr />
-        <h2>User Details</h2>
-        <UserDetails />
+        <EditUser />
+        <AddUser />
+        <ViewUser/>
     </div>
 );
 export default App;
