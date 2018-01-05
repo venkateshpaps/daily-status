@@ -24,7 +24,7 @@ class AddDetail extends Component {
     render() {
         return (
             <div>
-                {this.props.showContent.showContent==1 ? <div>
+               
                     <h2>Add user </h2>
                     <p>Id:<input type="text"  name="id" onChange={this.Change.bind(this)} ></input></p>
                     <p>First Name : <input type="text"  name="first" onChange={this.Change.bind(this)} ></input></p>
@@ -33,17 +33,19 @@ class AddDetail extends Component {
                     <p>Description:<input type="text" name="description" onChange={this.Change.bind(this)}></input></p>
                     <p>Profile Photo : <input type="text" name="thumbnail" onChange={this.Change.bind(this)}></input></p>
                     <button type="button" onClick={this.props.addUser.bind(this,this.state.addUser)}> save</button>
-                {/* </form> */}</div>:null}
+                {/* </form> */}
             </div>
         );
     }
 }
+
+
 function mapStateToProps(state) {
     return {
-        user: state.users,
-        showContent:state.showContent
+        user: state.users
     };
 }
+
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({ addUser: addUser }, dispatch);
 }

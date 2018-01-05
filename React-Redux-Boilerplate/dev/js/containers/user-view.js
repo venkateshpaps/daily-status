@@ -8,12 +8,12 @@ class UserDetail extends Component {
         }
         return (
             <div>
-                 {this.props.showContent.showContent == 3?<div>
+            
                 <img src={this.props.user.thumbnail} />
                 <h2>Name: {this.props.user.first} {this.props.user.last}</h2>
                 <h3>Age: {this.props.user.age}</h3>
                 <h3>Description: {this.props.user.description}</h3>
-                </div>:null}
+        
             </div>
         );
     }
@@ -21,8 +21,7 @@ class UserDetail extends Component {
 // "state.activeUser" is set in reducers/index.js
 function mapStateToProps(state) {
     return {
-        user: state.activeUser,
-        showContent: state.showContent
+        user: state.activeUser
     };
 }
 

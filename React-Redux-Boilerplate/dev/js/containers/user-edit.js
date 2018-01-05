@@ -51,7 +51,7 @@ class UserDetail extends Component {
         }
         return (
             <div>
-                {this.props.showContent.showContent == 2 ? <div>
+              
                     <h2>User Details</h2>
                     <img src={this.props.user.thumbnail} />
                     <h2>{this.props.user.first} {this.props.user.last}</h2>
@@ -59,7 +59,7 @@ class UserDetail extends Component {
                     <h3>Age: <input type="text" value={this.state.newUser.age} onChange={this.ageChange.bind(this)}></input></h3>
                     <h3>Description: <input type="text" value={this.state.newUser.description} onChange={this.descriptionChange.bind(this)}></input></h3>
                     <button onClick={this.props.modifyUser.bind(this, this.state.newUser)}> save</button>
-                </div> : null}
+              
             </div>
         );
     }
@@ -68,8 +68,7 @@ class UserDetail extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.activeUser,
-        showContent: state.showContent
+        user: state.activeUser
     };
 }
 
