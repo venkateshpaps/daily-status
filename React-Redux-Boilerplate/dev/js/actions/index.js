@@ -5,13 +5,7 @@ export const selectUser = (user) => {
         payload: user
     }
 };
-export const addUser=(user)=>{
-    console.log(user);
-    return{
-        type:'ADD',
-        payload:user
-    }
-};
+
 export const modifyUser = (user) => {
     return {
         type: 'MODIFY',
@@ -21,7 +15,7 @@ export const modifyUser = (user) => {
 export const showDetails = (value) => {
     return {
         type: 'SHOW_DETAILS',
-        payload: {showContent:value}
+        payload: { showContent: value }
     }
 };
 export const deleteUser = (user) => {
@@ -30,6 +24,23 @@ export const deleteUser = (user) => {
         payload: user
     }
 }
+export const addUser = (user) => {
+    return fetch('http://localhost:3001/employee/',
+        {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(user)
+        }).then(
+        data =>
+            ({
+                type: "ADD",
+                payload: data.json()
+            }),
+
+        error => console.log(error)
+        );
+};
+
 
 
 

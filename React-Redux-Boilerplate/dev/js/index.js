@@ -15,6 +15,23 @@ const store = createStore(
     applyMiddleware(thunk, promise, logger)
 );
 
+function getUsers() {
+    return fetch('http://localhost:3001/employee');
+}
+function loadUser() {
+    return function (dispatch) {
+        return getUsers().then(
+            data => dispatch({
+                type: "LOAD",
+                payload: data.json()
+            }),
+            error => console.log(error)
+        );
+    }
+}
+store.dispatch(
+    loadUser()
+);
 
 ReactDOM.render(
     <Provider store={store}>
