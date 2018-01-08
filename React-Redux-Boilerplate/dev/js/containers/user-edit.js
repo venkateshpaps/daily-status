@@ -8,7 +8,7 @@ class UserDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newUser: {},
+            newUser: this.props.user
         };
     }
 
@@ -55,7 +55,7 @@ class UserDetail extends Component {
                     <h2>User Details</h2>
                     <img src={this.props.user.thumbnail} />
                     <h2>{this.props.user.first} {this.props.user.last}</h2>
-                    <h3>Name: <input type="text" value={this.state.newUser.name} onChange={this.nameChange.bind(this)}></input></h3>
+                    <h3>First Name: <input type="text" value={this.state.newUser.name} onChange={this.nameChange.bind(this)}></input></h3>
                     <h3>Age: <input type="text" value={this.state.newUser.age} onChange={this.ageChange.bind(this)}></input></h3>
                     <h3>Description: <input type="text" value={this.state.newUser.description} onChange={this.descriptionChange.bind(this)}></input></h3>
                     <button onClick={this.props.modifyUser.bind(this, this.state.newUser)}> save</button>

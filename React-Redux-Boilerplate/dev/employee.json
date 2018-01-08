@@ -1,0 +1,56 @@
+{
+  "employeeDetails": [
+    {
+      "id": 11,
+      "name": "venkatesh",
+      "age": "24"
+    },
+    {
+      "id": 12,
+      "name": "Nirmal",
+      "age": "22"
+    },
+    {
+      "id": 13,
+      "name": "Partha",
+      "age": "21"
+    }
+  ],
+  "studentDetails": [
+    {
+      "id": 21,
+      "name": "venkatesh",
+      "age": "24"
+    },
+    {
+      "id": 22,
+      "name": "Nirmal",
+      "age": "22"
+    },
+    {
+      "id": 23,
+      "name": "Partha",
+      "age": "21"
+    }
+  ],
+  "PassengerDetails": [
+    {
+      "id": 31,
+      "name": "venkatesh",
+      "age": "24"
+    },
+    {
+      "id": 32,
+      "name": "Nirmal",
+      "age": "22"
+    },
+    {
+      "id": 33,
+      "name": "Partha",
+      "age": "21"
+    },
+    {
+      "id": 34
+    }
+  ]
+}
