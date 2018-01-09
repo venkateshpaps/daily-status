@@ -7,11 +7,23 @@ export const selectUser = (user) => {
 };
 
 export const modifyUser = (user) => {
-    return {
-        type: 'MODIFY',
-        payload: user
-    }
-}
+    
+    return fetch('http://localhost:3001/employee/'+user.id,
+    
+        {
+            method: 'PUT',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(user)
+        }).then(
+        data =>
+            ({
+                type: "MODIFY",
+                payload: data.json()
+            }),
+
+        error => console.log(error)
+        );
+};
 export const showDetails = (value) => {
     return {
         type: 'SHOW_DETAILS',
@@ -19,11 +31,21 @@ export const showDetails = (value) => {
     }
 };
 export const deleteUser = (user) => {
-    return {
-        type: 'DELETE',
-        payload: user
-    }
-}
+    
+    return fetch('http://localhost:3001/employee/'+user.id,
+    
+        {
+            method: 'DELETE',
+        }).then(
+        data =>
+            ({
+                type: 'DELETE',
+                payload: user
+            }),
+
+        error => console.log(error)
+        );
+};
 export const addUser = (user) => {
     return fetch('http://localhost:3001/employee/',
         {

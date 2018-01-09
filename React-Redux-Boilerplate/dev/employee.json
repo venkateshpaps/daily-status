@@ -1,56 +1,37 @@
 {
-  "employeeDetails": [
+  "employee": [
     {
-      "id": 11,
-      "name": "venkatesh",
-      "age": "24"
+      "id": "11",
+      "first": "rakeshh",
+      "last": "kumar",
+      "age": "22",
+      "description": "sangi",
+      "thumbnail": "http://.com"
     },
     {
-      "id": 12,
-      "name": "Nirmal",
-      "age": "22"
+      "id": "12",
+      "first": "nirmal",
+      "last": "pandi",
+      "age": "22",
+      "description": "mangi",
+      "thumbnail": "http://st1.bollywoodlife.com/wp-content/uploads/2017/04/AK7.jpg"
     },
     {
-      "id": 13,
-      "name": "Partha",
-      "age": "21"
-    }
-  ],
-  "studentDetails": [
-    {
-      "id": 21,
-      "name": "venkatesh",
-      "age": "24"
+      "id": "13",
+      "first": "parthu",
+      "last": "gopu",
+      "age": "22",
+      "description": "monkey",
+      "thumbnail": "http://st1.bollywoodlife.com/wp-content/uploads/2017/04/AK9.jpg"
     },
     {
-      "id": 22,
-      "name": "Nirmal",
-      "age": "22"
-    },
-    {
-      "id": 23,
-      "name": "Partha",
-      "age": "21"
-    }
-  ],
-  "PassengerDetails": [
-    {
-      "id": 31,
-      "name": "venkatesh",
-      "age": "24"
-    },
-    {
-      "id": 32,
-      "name": "Nirmal",
-      "age": "22"
-    },
-    {
-      "id": 33,
-      "name": "Partha",
-      "age": "21"
-    },
-    {
-      "id": 34
+     
+      "thumbnail": "http://st1.bollywoodlife.com/wp-content/uploads/2017/04/Ajith-Kumar-2.jpg",
+      "id": "14",
+      "first": "venky",
+      "last": "sai",
+      "age": "24",
+      "description": "graduate"
     }
   ]
 }
