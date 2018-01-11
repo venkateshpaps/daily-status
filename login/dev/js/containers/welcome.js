@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import UserReducer from '../reducers/reducer-users';
+import UserReducer from '../reducers/LoginReducer';
 class Welcome extends Component {
     render() {
         return (
             <div>
-                hi {this.props.user[0].name}    
+                hi {this.props.user[0].name}
             </div>
         )
     }
