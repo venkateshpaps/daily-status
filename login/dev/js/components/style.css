@@ -1,0 +1,34 @@
+.header{
+    background-color: aqua;
+    color:#df2525;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; 
+}
+.bgColor{
+background-color: blueviolet;
+}
+.marginLogin{
+    margin-left: 45%;
+}
+.marginPhone{
+    margin-left: 38%;
+}
+.marginName{
+    margin-left: 38%;
+}
+.marginLoginBtn{
+    margin-left: 47%;
+}
+.phoneInput{
+    margin-left: 10%;
+}
+.nameInput{
+    margin-left: 16.5%;
+}
