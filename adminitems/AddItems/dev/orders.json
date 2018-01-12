@@ -1,0 +1,22 @@
+{
+  "orderedItems": [
+    {
+      "id": "1",
+      "item": "burger",
+      "price": "300",
+      "image": "http://bk-apac-prd.s3.amazonaws.com/sites/burgerkingindia.in/files/VegWhopper-Thumb_0.png"
+    },
+    {
+      "id": "2",
+      "item": "sandwich",
+      "price": "900",
+      "image": "http://img.taste.com.au/CE1-UE-i/taste/2016/11/salami-chargrilled-capsicum-toasted-sandwich-with-baby-spinach-goats-cheese-62640-1.jpeg"
+    },
+    {
+      "id": "3",
+      "item": "idly",
+      "price": "30",
+      "image": "http://photos1.blogger.com/blogger/358/922/1600/IMG_3297.jpg"
+    }
+  ]
+}
