@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import * as RatingActions from './ActionCreators/RatingActions';
 import ProductList from './Components/ProductList';
 import ProductDetail from './Components/ProductDetail';
 class App extends Component {
   constructor(props) {
     super()
-  }
-  handleGetProductRatings = (productId) => {
-    this.props.actions.getProductRating(productId)
   }
   render() {
     return (
@@ -18,13 +13,7 @@ class App extends Component {
         <Switch>
           <Route
             exact path="/" 
-            render={props =>
-              <ProductList
-                {...props}
-                products={this.props.products}
-                handleGetProductRatings={this.handleGetProductRatings}
-              />
-            }
+            component={ProductList} 
           />
           <Route
             path="/product-detail/:id/:productName/:price"
@@ -42,14 +31,8 @@ class App extends Component {
 }
 function mapStateToProps(state) {
   return {
-    products: state.products,
     rating: state.productRating,
     loading: state.loading
   };
 }
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(RatingActions, dispatch)
-  };
-}
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps)(App));
