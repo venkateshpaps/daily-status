@@ -1,0 +1,23 @@
+/* Product Detail */
+.row{
+    margin:unset;
+}
+.productImage{
+    height:150px;
+    width:200px;
+}
+.productDetailBG{
+    background: rgba(0,0,0,0.6);
+    text-align:center;
+    color:#ffffff;
+}
+.ratingLoading{
+    color:#edf900;
+}
+.backBtn{
+    margin-top:20px;
+}
+/* Product List */
+.productListBG{
+    font-size:16px;
+}
